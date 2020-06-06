@@ -6,7 +6,7 @@ git clone https://github.com/Pecherskiy88/Unisender_Task.git
 
 ## Available Scripts
 
-After clone repositories in the project directory, you can run:
+After clone repository in the project directory, you can run:
 
 ### `npm install`
 
