@@ -1,14 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import s from './style.module.css';
 
-const LinkButton = () => {
+const LinkButton = ({ link }) => {
   return (
-    <NavLink to="/" className={s.linkButton}>
-      Кнопка
-    </NavLink>
+    <a
+      className={s.linkButton}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub
+    </a>
   );
+};
+
+LinkButton.propTypes = {
+  link: PropTypes.string.isRequired,
 };
 
 export default LinkButton;

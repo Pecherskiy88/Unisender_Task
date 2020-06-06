@@ -14,4 +14,4 @@ export const getUsersApi = (requestParams) => {
   return axios.get(`${URL}/users?per_page=${params.count}`);
 };
 
-// export const getCurrentPostApi = (id) => axios.get(`${URL}/${id}`);
+export const getCurrentUserApi = (login) => axios.get(`${URL}/users/${login}`);

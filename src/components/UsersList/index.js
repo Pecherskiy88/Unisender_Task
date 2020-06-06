@@ -9,7 +9,12 @@ const UsersList = ({ data }) => {
   const renderItems =
     data.length > 0
       ? data.map((el) => (
-          <Item key={el.id} avatar={el.avatar_url} login={el.login} />
+          <Item
+            key={el.id}
+            avatar={el.avatar_url}
+            login={el.login}
+            link={el.html_url}
+          />
         ))
       : [];
   return <ul className={s.list}>{renderItems}</ul>;

@@ -1,4 +1,4 @@
-import { getUsersApi } from '../api';
+import { getUsersApi, getCurrentUserApi } from '../api';
 import { ActionType } from '../constants/usersConstants';
 
 const {
@@ -7,6 +7,9 @@ const {
   GET_USERS_FAILURE,
   CLEAR_STORE,
   SET_PAGE,
+  GET_CURRENT_USER_INIT,
+  GET_CURRENT_USER_SUCCESS,
+  GET_CURRENT_USER_FAILURE,
 } = ActionType;
 
 export const getPosts = (requestParams) => (dispatch) => {
@@ -23,6 +26,25 @@ export const getPosts = (requestParams) => (dispatch) => {
     .catch((error) => {
       dispatch({
         type: GET_USERS_FAILURE,
+        payload: { ...error },
+      });
+    });
+};
+
+export const getCurrentUser = (login) => (dispatch) => {
+  dispatch({
+    type: GET_CURRENT_USER_INIT,
+  });
+  getCurrentUserApi(login)
+    .then((response) => {
+      dispatch({
+        type: GET_CURRENT_USER_SUCCESS,
+        payload: { ...response },
+      });
+    })
+    .catch((error) => {
+      dispatch({
+        type: GET_CURRENT_USER_FAILURE,
         payload: { ...error },
       });
     });
