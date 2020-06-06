@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import { getCurrentUser, clearStore } from '../../redux/actions/usersActions';
+import { getCurrentUser } from '../../redux/actions/usersActions';
 import { currentUserSelector } from '../../redux/selectors/usersSelectors';
 
 import ProfileCard from '../../components/ProfileCard';
@@ -22,8 +22,6 @@ const Profile = () => {
 
   useEffect(() => {
     dispatch(getCurrentUser(login));
-
-    return () => dispatch(clearStore());
   }, [dispatch, login]);
 
   const renderSpinner = loading ? <Spinner fill="#000" /> : null;

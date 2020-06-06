@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getPosts, setPage } from '../../redux/actions/usersActions';
+import {
+  getPosts,
+  setPage,
+  clearStore,
+} from '../../redux/actions/usersActions';
 import { userDataSelector } from '../../redux/selectors/usersSelectors';
 
 import UsersList from '../../components/UsersList';
@@ -23,6 +27,7 @@ const MainPage = () => {
       : data;
 
   useEffect(() => {
+    dispatch(clearStore());
     dispatch(getPosts());
   }, [dispatch]);
 

@@ -65,7 +65,7 @@ const currentUserInitialState = {
     login: '',
     id: null,
     avatar_url: '',
-    url: '',
+    html_url: '',
     followers_url: '',
     subscriptions_url: '',
     organizations_url: '',

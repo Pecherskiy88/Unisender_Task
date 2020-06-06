@@ -5,6 +5,25 @@
   background-color: #ffffff;
   border-radius: 10px;
   padding: 24px 48px;
+  cursor: pointer;
+  position: relative;
+}
+
+.wrapper:hover::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  color: #6a737d;
+}
+
+.wrapperInfo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 24px 48px;
 }
 
 .avatar {
@@ -33,4 +52,36 @@
   font-size: 16px;
   line-height: 20px;
   color: rgba(0, 0, 0, 0.4);
+}
+
+/* allinfoBlock */
+.mainBlock {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.bigAvatar {
+  display: block;
+  width: 240px;
+  height: 240px;
+  border-radius: 5px;
+}
+
+.firstInfo {
+  margin-left: 15px;
+}
+
+.row {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  color: #6a737d;
+}
+
+.description {
+  padding-left: 10px;
 }
