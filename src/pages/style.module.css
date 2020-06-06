@@ -3,3 +3,9 @@
   max-width: 1020px;
   margin: 0 auto;
 }
+
+.paginationBlock {
+  display: flex;
+  justify-content: center;
+  padding: 35px 0 45px;
+}

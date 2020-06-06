@@ -7,10 +7,12 @@ const {
   GET_USERS_SUCCESS,
   GET_USERS_FAILURE,
   CLEAR_STORE,
+  SET_PAGE,
 } = ActionType;
 
 const usersDataInitialState = {
   data: [],
+  currentPage: 1,
   loading: false,
   loaded: false,
   error: false,
@@ -46,6 +48,9 @@ const usersDataReducer = (state = usersDataInitialState, { type, payload }) => {
         error: true,
         errorData: payload,
       };
+    }
+    case SET_PAGE: {
+      return { ...state, currentPage: payload };
     }
     case CLEAR_STORE:
       return { ...usersDataInitialState };

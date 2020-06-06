@@ -6,7 +6,6 @@ import Item from './Item';
 import s from './style.module.css';
 
 const UsersList = ({ data }) => {
-  console.log('data: ', data);
   const renderItems =
     data.length > 0
       ? data.map((el) => (

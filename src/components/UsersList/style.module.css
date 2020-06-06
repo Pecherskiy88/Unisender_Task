@@ -18,6 +18,7 @@
 .avatarBlock {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .avatar {
@@ -25,6 +26,12 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.avatarBlock:hover > .avatar {
+  transform: rotate(15deg);
+  transition: transform 0.2s ease-in-out;
 }
 
 .name {

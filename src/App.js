@@ -4,16 +4,16 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 // PAGES
 import MainPage from './pages/MainPage/lazy';
 
+import Spinner from './assets/icons/spinner';
+
 const App = () => {
   return (
-    <div>
-      <Switch>
-        <Suspense fallback={<div>Загрузка...</div>}>
-          <Route exact path="/" component={MainPage} />
-          <Redirect to="/" />
-        </Suspense>
-      </Switch>
-    </div>
+    <Switch>
+      <Suspense fallback={<Spinner />}>
+        <Route exact path="/" component={MainPage} />
+        <Redirect to="/" />
+      </Suspense>
+    </Switch>
   );
 };
 
