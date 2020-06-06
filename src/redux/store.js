@@ -3,14 +3,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 // Reducers
-import questionnaireReducer from './reducers/questionnaireReducer';
+import usersReducer from './reducers/usersReducer';
 
 // Middleware
 const middleware = [thunk];
 const enhancer = applyMiddleware(...middleware);
 
 const rootReducer = combineReducers({
-  questionnaire: questionnaireReducer,
+  users: usersReducer,
 });
 
 const store = createStore(rootReducer, composeWithDevTools(enhancer));
